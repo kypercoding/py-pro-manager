@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+        <link rel="stylesheet" href="static/css/login/registration.css">
+        <link rel="stylesheet" href="static/css/general.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="form-container">
+            <h1>
+                Register an Account
+            </h1>
+            <!-- Registration Form -->
+            <form action="/register" method="POST">
+                <table id="register-table">
+                    {% if error %}
+                    <tr>
+                        <td>
+                            <p class="error"><strong>Error:</strong> {{ error }}
+                        </td>
+                    </tr>
+                    {% endif %}
+                    <!-- Username input -->
+                    <tr>
+                        <td>
+                            <input type="text" name="username" placeholder="Username">
+                        </td>
+                    </tr>
+                    <!-- Email input -->
+                    <tr>
+                        <td>
+                            <input type="text" name="email" placeholder="Email">
+                        </td>
+                    </tr>
+                    <!-- Password input -->
+                    <tr>
+                        <td>
+                            <input type="password" name="password" placeholder="Password">
+                        </td>
+                    </tr>
+                    <!-- Submit button -->
+                    <tr>
+                        <td>
+                            <input id="submit-button" type="submit" value="Submit">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/">Return to Login</a>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+    <script type="text/javascript" src="static/js/login/registration.js"></script>
+</html>

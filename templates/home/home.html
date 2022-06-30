@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="static/css/home/home.css">
+        <link rel="stylesheet" href="static/css/general.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <body>
+        <div class="navbar-container">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <a href="/edit-template"><button>Create New Template</button></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="/logout"><button>Logout</button></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h1>Templates</h1>
+        <div class="container">
+            <!-- Start out with list of available templates -->
+            <table id="templates-list">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Edit?</th>
+                        <th>Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Empty row for show -->
+                    <tr>
+                        <td class="first-col">Empty</td>
+                        <td class="second-col">Empty</td>
+                        <td class="third-col">Empty</td>
+                        <td class="fourth-col">Empty</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+    <script type="text/javascript" src="static/js/home/home.js"></script>
+</html>

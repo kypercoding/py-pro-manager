@@ -1,0 +1,13 @@
+body {
+    background-color: lightcoral;
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+button, table, table tr td, input, select {
+    font-family:'Courier New', Courier, monospace;
+}
+
+h1 {
+    font-weight: 200;
+}

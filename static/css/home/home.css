@@ -1,0 +1,77 @@
+.navbar-container, .container {
+    width: 100%;
+    margin: auto;
+}
+
+.navbar-container table, table {
+    background-color:lightblue;
+    margin: auto;
+    padding: 1em;
+}
+
+table td {
+    width: 100%;
+    table-layout: fixed;
+    text-align: center;
+    margin: auto;
+    color: gray;
+    background-color: azure;
+    border-style: none;
+    border-color: black;
+    border-width: 0.1em;
+}
+
+.navbar-container table td {
+    border-style: none;
+}
+
+.navbar-container table td a {
+    padding: 0;
+}
+
+.navbar-container table td a button {
+    height: 100%;
+    width: 100%;
+    padding: 0.5em;
+    border-style: none;
+    background-color: azure;
+}
+
+.navbar-container table td a button:hover {
+    border-style: none;
+    background-color: cyan;
+}
+
+.first-col {
+    width: 30%;
+}
+
+.second-col {
+    width: 30%;
+}
+
+.third-col {
+    width: 20%;
+}
+
+.fourth-col {
+    width: 20%;
+}
+
+.first-col button, .second-col button,
+.third-col button, .fourth-col button {
+    width:100%;
+    height:100%;
+    background-color: lightcoral;
+    color: white;
+    border-style: none;
+}
+
+.first-col button:hover, .second-col button:hover,
+.third-col button:hover, .fourth-col button:hover {
+    width:100%;
+    height:100%;
+    background-color: cyan;
+    color: black;
+    border-style: none;
+}

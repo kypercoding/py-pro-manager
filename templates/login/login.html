@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="static/css/login/login.css">
+        <link rel="stylesheet" href="static/css/general.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="form-container">
+            <h1>
+                Login
+            </h1>
+            <!-- Login Form -->
+            <form action="/login" method="POST">
+                <table>
+                    {% if error %}
+                    <tr>
+                        <td>
+                            <p class="error"><strong>Error:</strong> {{ error }}</p>
+                        </td>
+                    </tr>
+                    {% endif %}
+                    <!-- Username input -->
+                    <tr>
+                        <td>
+                            <input type="text" name="username" placeholder="Username">
+                        </td>
+                    </tr>
+                    <!-- Password input -->
+                    <tr>
+                        <td>
+                            <input type="password" name="password" placeholder="Password">
+                        </td>
+                    </tr>
+                    <!-- Submit button -->
+                    <tr>
+                        <td>
+                            <input id="submit-button" type="submit" value="Submit">
+                        </td>
+                    </tr>
+                    <!-- Registration link -->
+                    <tr>
+                        <td>
+                            <a href="/register">Register</a>
+                        </td>
+                    </tr>
+                    <!-- Forgot password link -->
+                    <tr>
+                        <td>
+                            <a href="/forgotpassword">Forgot Password</a>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,88 @@
+#dropdown, #dropdown select {
+    text-align: center;
+    background-color: lightgray;
+    border-style: none;
+    border-color: black;
+    border-width: 0.25em;
+    padding: 1em;
+    width: 80%;
+}
+
+.submenu, #objects-container, #packages-container, #info-container {
+    width: 80%;
+    margin: auto;
+}
+
+.submenu-buttons {
+    align-content: center;
+    background-color: lightblue;
+    width: 90%;
+    margin: 0.5em;
+    padding: 1em;
+    border-style: none;
+    color: gray;
+}
+
+.submenu table {
+    table-layout: fixed;
+    border-style: none;
+    width: 100%;
+    margin: auto;
+}
+
+#objects-container table, #packages-container table, #info-table {
+    table-layout: fixed;
+    border-style: none;
+    border-color: black;
+    border-width: 0.1em;
+    padding: 0.5em;
+    width: 100%;
+    margin: auto;
+    background-color: azure;
+}
+
+.col-1 {
+    width: 30%;
+}
+
+.col-2 {
+    width: 40%;
+}
+
+.col-3 {
+    width: 30%;
+}
+
+.p-col-1 {
+    width: 100%;
+}
+
+.p-col-2 {
+    width: 100%;
+}
+
+input {
+    text-align: center;
+    padding: 0.5em;
+    width: 90%;
+    background-color: transparent;
+    border-style: none;
+}
+
+#info-container input {
+    background-color: lightgrey;
+}
+
+.delete {
+    background-color: red;
+    width: 80%;
+    height: 100%;
+    padding: 0.5em;
+    border-style: none;
+    color: white;
+}
+
+.delete:hover, .submenu-buttons:hover {
+    background-color: cyan;
+    color: black;
+}

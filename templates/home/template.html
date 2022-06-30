@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Template Editor</title>
+        <link rel="stylesheet" href="static/css/home/template.css">
+        <link rel="stylesheet" href="static/css/general.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <body>
+        <h1>
+            Edit Config Template
+        </h1>
+        <div class="submenu">
+            <select id="dropdown">
+                <option value="objects">Files and Directories</option>
+                <option value="packages">Python Packages</option>
+                <option value="information">Information</option>
+            </select>
+            <input id="hidden-input" type="hidden" value="{{ code }}">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <button class="submenu-buttons" id="return-button">Return Home</button>
+                        </td>
+                        <td>
+                            <button class="submenu-buttons" id="submit-button">Save</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button class="submenu-buttons" id="delete-button">Delete Template</button>
+                        </td>
+                        <td>
+                            <button class="submenu-buttons" id="add-row">Add Row</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="objects-container">
+            <table id="objects-table">
+                <thead>
+                    <th class="col-1">
+                        Delete?
+                    </th>
+                    <th class="col-2">
+                        File or Directory Path
+                    </th>
+                    <th class="col-3">
+                        File?
+                    </th>
+                </thead>
+                <tbody id="objects-tbody">
+                </tbody>
+            </table>
+        </div>
+        <div id="packages-container" style="display:none">
+            <table id="packages-table">
+                <thead>
+                    <th class="p-col-1">
+                        Delete?
+                    </th>
+                    <th class="p-col-2">
+                        Package
+                    </th>
+                </thead>
+                <tbody id="packages-tbody">
+                </tbody>
+            </table>
+        </div>
+        <div id="info-container" style="display: none">
+            <table id="info-table">
+                <tbody>
+                    <tr>
+                        <td>
+                            <h2>Name</h2><input placeholder="Name of the project" type="text" id="name-input">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h2>Description</h2><input placeholder="Description of the project" type="text" id="description-input">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+    <script type="text/javascript" src="static/js/home/template.js"></script>
+    <script>
+        var data = "{{ code }}";
+
+        if (data != null && data != "None") {
+            getData(data);
+        }
+    </script>
+</html>

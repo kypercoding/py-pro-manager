@@ -1,0 +1,35 @@
+.form-container, .form-container table {
+    background-color: lightblue;
+    margin: auto;
+    padding: 1em;
+    width: 80%;
+}
+
+.form-container table td, input{
+    padding: 1em;
+    margin: auto;
+}
+
+input {
+    border-style: none;
+}
+
+#submit-button {
+    border-style: none;
+    color: white;
+    background-color: lightcoral;
+}
+
+#submit-button:hover {
+    background-color: lightyellow;
+    color: black;
+}
+
+.error {
+    border-style: solid;
+    border-width: 0.5em;
+    border-color: red;
+    padding: 1em;
+    color: white;
+    background-color: lightcoral;
+}
