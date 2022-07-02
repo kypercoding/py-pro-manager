@@ -26,7 +26,7 @@ db = {
     'user': os.environ.get('USER'),
     'pass': os.environ.get('PASSWORD'),
     'database': os.environ.get('DATABASE'),
-    'port': os.environ.get('PORT')
+    'port': int(os.environ.get('PORT'))
 }
 
 app.config['db'] = db
