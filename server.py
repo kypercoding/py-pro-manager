@@ -1,6 +1,7 @@
 import os
 import argparse
 import secrets
+import getpass
 
 from flask import Flask, render_template, request, session
 from flask_login import LoginManager
@@ -23,7 +24,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 db = {
     'host': os.environ.get('HOST'),
     'user': os.environ.get('USER'),
-    'pass': os.environ.get('PASS'),
+    'pass': os.environ.get('PASSWORD'),
     'database': os.environ.get('DATABASE'),
     'port': os.environ.get('PORT')
 }

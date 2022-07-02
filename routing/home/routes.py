@@ -8,6 +8,7 @@ import io
 from db import configs_db as cdb
 from parsers.parser import OBJECT_SEP
 import parsers.parser as ps
+from auth.validate_user_input import check_empty
 
 home_bp = Blueprint(
     "home_bp",
@@ -60,12 +61,23 @@ def save_template():
     # saves configs to database
     config_str = ps.create_config(objects, packages)
 
+    # checks if name or description are empty, and is therefore invalid input
+    if check_empty(data['name']) or check_empty(data['description']):
+        return Response(status=404, mimetype="application/json", response=json.dumps(
+            {'error': "Please make sure name and description aren't empty!"}
+        ))
+
+    # if no data code is found, the template must be saved to the database
     if data['code'] == 'None':
         cdb.insert_config(current_user.get_uuid(), data['name'], data['description'], config_str, current_app.config['db'])
+    # if a data code is found, the template must be updated in the database
     else:
         cdb.update_config(uuid.UUID(data['code']), current_user.get_uuid(), data['name'], data['description'], config_str, current_app.config['db'])
-
-    return json.dumps(({'success':True}, 200, {'ContentType':'application/json'}))
+    
+    # returns a successful response
+    return Response(status=200, content_type="application/json", response=json.dumps({
+        'success': True
+    }))
 
 
 @home_bp.route('/logout', methods=['GET'])

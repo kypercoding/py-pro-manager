@@ -2,13 +2,21 @@ import re
 
 
 def check_empty(input):
-    if input == None or input == "":
+    """
+    Checks if string is an empty
+    string, including strings
+    with whitespace only.
+    """
+    if input == None or input.strip() == "":
         return True
     
     return False
 
 
 def validate_email(email):
+    """
+    Checks if email is not empty.
+    """
     if check_empty(email):
         return "Please enter a non-empty email"
 
@@ -16,6 +24,10 @@ def validate_email(email):
 
 
 def check_user_and_pass(username, password):
+    """
+    Checks if username and password
+    are not empty.
+    """
     if check_empty(username):
         return "Please enter a non-empty username"
     

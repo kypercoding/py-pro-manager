@@ -2,6 +2,16 @@ let request = null;
 
 
 /**
+ * Alerts user of error given a
+ * response from server.
+ * @param {JSON} response
+ */
+function showError(response) {
+    alert(response.responseJSON['error']);
+}
+
+
+/**
  * Delete the template.
  */
 function deleteTemplate() {
@@ -326,7 +336,8 @@ function sendInformation() {
             contentType: "application/json",
             dataType: 'json',
             data: JSON.stringify(data),
-            success: returnHome
+            success: returnHome,
+            error: showError
         }
     );
 }
