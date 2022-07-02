@@ -32,7 +32,7 @@ def get_all_configs(uuid, params):
 
     # obtains each row from statement
     # execution
-    with connect(host=params['host'], user=params['user'], password=params['pass'], database=params['database'], port=params['port']) as conn:
+    with connect(params) as conn:
         with closing(conn.cursor()) as cursor:
             cursor.execute(stmt)
 
