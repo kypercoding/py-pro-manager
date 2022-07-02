@@ -36,7 +36,8 @@ def register(username, email, password, params):
                 """.format(uuid, username, email, key))
         
         return True
-    except Exception:
+    except Exception as e:
+        print(e)
         return False
 
 
