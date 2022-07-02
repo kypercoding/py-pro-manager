@@ -7,10 +7,6 @@ username, email and password for login/registration.
 
 ## Changes
 
-### server.py:
-* Removed password as command line argument, changed so that password
-is required to be inputted after command line.
-
 ### main.py:
 * Moved all parsers.parser functions to main.py so that the functions need not be separately packaged.
 * Renamed main.py to build-template.py (to avoid common filename "main.py").
