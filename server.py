@@ -21,13 +21,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 # saves the database credentials into
 # a more functional format
-db = {
-    'host': os.environ.get('HOST'),
-    'user': os.environ.get('USER'),
-    'pass': os.environ.get('PASSWORD'),
-    'database': os.environ.get('DATABASE'),
-    'port': int(os.environ.get('PORT'))
-}
+db = os.environ.get('DATABASE_URL')
 
 app.config['db'] = db
 

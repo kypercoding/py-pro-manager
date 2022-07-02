@@ -26,7 +26,7 @@ def register(username, email, password, params):
 
         # store the email, key, salt,
         # and uuid into the database
-        with connect(host=params['host'], user=params['user'], password=params['pass'], database=params['database'], port=params['port']) as conn:
+        with connect(params) as conn:
             with closing(conn.cursor()) as cursor:
                 cursor.execute("""
                 PREPARE insert_user (UUID, TEXT, TEXT, TEXT) AS
@@ -47,7 +47,7 @@ def validate_user(username, password, params):
     password hash.
     """
     # retrieves username and key hash from database to verify
-    with connect(host=params['host'], user=params['user'], password=params['pass'], database=params['database'], port=params['port']) as conn:
+    with connect(params) as conn:
         with closing(conn.cursor()) as cursor:
             cursor.execute("""
             PREPARE validate_user (TEXT) AS
@@ -74,7 +74,7 @@ def get_by_uuid(uuid, params):
     Obtains user information by
     unique UUID.
     """
-    with connect(host=params['host'], user=params['user'], password=params['pass'], database=params['database'], port=params['port']) as conn:
+    with connect(params) as conn:
         with closing(conn.cursor()) as cursor:
             cursor.execute(
                 """
@@ -108,7 +108,7 @@ def get_by_user(user, params):
     Obtains user information by
     unique username.
     """
-    with connect(host=params['host'], user=params['user'], password=params['pass'], database=params['database'], port=params['port']) as conn:
+    with connect(params) as conn:
         with closing(conn.cursor()) as cursor:
             cursor.execute(
                 """

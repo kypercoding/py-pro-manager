@@ -72,7 +72,7 @@ def get_config(code, user_uuid, params):
     EXECUTE get_config('{}', '{}');
     """.format(user_uuid, code)
 
-    with connect(host=params['host'], user=params['user'], password=params['pass'], database=params['database'], port=params['port']) as conn:
+    with connect(params) as conn:
         with closing(conn.cursor()) as cursor:
             cursor.execute(stmt)
 
@@ -107,7 +107,7 @@ def insert_config(user_uuid, name, description, config, params):
     EXECUTE insert_pair('{}', '{}');
     """.format(uuid, name, description, config, uuid, user_uuid)
 
-    with connect(host=params['host'], user=params['user'], password=params['pass'], database=params['database'], port=params['port']) as conn:
+    with connect(params) as conn:
         with closing(conn.cursor()) as cursor:
             cursor.execute(stmt)
 
@@ -129,7 +129,7 @@ def check_pair(code, user_uuid, params):
     EXECUTE check_pair('{}', '{}');
     """.format(code, user_uuid)
 
-    with connect(host=params['host'], user=params['user'], password=params['pass'], database=params['database'], port=params['port']) as conn:
+    with connect(params) as conn:
         with closing(conn.cursor()) as cursor:
             cursor.execute(stmt)
 
@@ -161,7 +161,7 @@ def update_config(code, user_uuid, name, description, config, params):
     EXECUTE update_config('{}', '{}', '{}', '{}');
     """.format(name, description, config, code)
 
-    with connect(host=params['host'], user=params['user'], password=params['pass'], database=params['database'], port=params['port']) as conn:
+    with connect(params) as conn:
         with closing(conn.cursor()) as cursor:
             cursor.execute(stmt)
 
@@ -180,6 +180,6 @@ def delete_config(code, user_uuid, params):
     EXECUTE delete_config('{}', '{}');
     """.format(user_uuid, code)
 
-    with connect(host=params['host'], user=params['user'], password=params['pass'], database=params['database'], port=params['port']) as conn:
+    with connect(params) as conn:
         with closing(conn.cursor()) as cursor:
             cursor.execute(stmt)
